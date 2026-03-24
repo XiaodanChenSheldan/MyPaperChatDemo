@@ -180,7 +180,7 @@ FAISS flat index with MMR (Maximal Marginal Relevance) search. MMR balances:
 - **Relevance** — how similar the chunk is to the query
 - **Diversity** — avoids returning 5 chunks from the same paragraph
 
-Configured with `k=5, fetch_k=15, lambda_mult=0.7`.
+Configured with `k=2, fetch_k=10, lambda_mult=0.7`.
 
 Per-paper filtering is supported — the UI dropdown restricts retrieval to one paper, which improves precision for paper-specific questions.
 
@@ -222,6 +222,9 @@ This project was built to demonstrate practical competence with the modern LLM/R
 
 ## Example
 ![Screenshot](image/example1.png)
+
+If the question and the selected paper do not match, no answer will be returned.
+![Screenshot](image/example2.png)
 
 ## Author
 

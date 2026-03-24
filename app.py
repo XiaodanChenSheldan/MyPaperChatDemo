@@ -162,15 +162,10 @@ print("\n=== Assembling RAG chain ===")
 #   3. An LLM (generates the answer)
 # into a single object you can call with one line.
 
-
-
-# Component 5 — Query function + transparency layer
-print("\n=== Defining query function ===")
-
-def ask(question: str, paper_name: str, verbose: bool = True) -> dict:
+def assemble_RAG(paper_name: str):
     # The retriever is the bridge between FAISS and the chain.
     retriever = vectorstore.as_retriever(search_type="similarity", 
-                                        search_kwargs={"k": 2, "fetch_k": 10,"filter": {"filename": paper_name}})
+                                        search_kwargs={"k": 2, "fetch_k": 10, "filter": {"filename": paper_name}})
 
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
@@ -189,7 +184,12 @@ def ask(question: str, paper_name: str, verbose: bool = True) -> dict:
         # WHICH chunks it retrieved, so you can verify the answer
         # actually came from your papers and not from hallucination.
     )
+    return qa_chain
 
+# Component 5 — Query function + transparency layer
+print("\n=== Defining query function ===")
+
+def ask(question: str, paper_name: str, verbose: bool = True) -> dict:
 
     """
     Ask a question about your research papers.
@@ -201,7 +201,7 @@ def ask(question: str, paper_name: str, verbose: bool = True) -> dict:
     Returns:
         dict with 'answer' and 'sources' keys
     """
-
+    qa_chain = assemble_RAG(paper_name)
     if verbose:
         print(f"\n{'='*60}")
         print(f"Question: {question}")
