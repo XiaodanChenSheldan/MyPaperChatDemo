@@ -214,7 +214,7 @@ This project was built to demonstrate practical competence with the modern LLM/R
 | RAG patterns | FAISS vector store, MMR retrieval, chunk strategy |
 | LangChain orchestration | `RetrievalQA`, `PromptTemplate`, retriever filters |
 | Prompt engineering | Phi-3 chat template, grounding constraints, answer seeding |
-| 4-bit quantization / LoRA | `BitsAndBytesConfig`, NF4, double quantization |
+| 4-bit quantization | `BitsAndBytesConfig`, NF4, double quantization |
 | PDF parsing | `pymupdf4llm`, column-aware extraction, reference removal |
 | Gradio UI | Per-paper dropdown, source display, example questions |
 
