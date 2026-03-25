@@ -69,7 +69,7 @@ Question → embed → FAISS MMR search → top-5 chunks
 ```bash
 # 1. Clone the repository
 git clone https://github.com/XiaodanChenSheldan/MyPaperChatDemo.git
-cd demo
+cd MyPaperChatDemo
 
 # 2. Create conda environment
 conda create -n rag-demo python=3.11 -y
