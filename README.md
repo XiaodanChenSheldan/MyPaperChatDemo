@@ -68,7 +68,7 @@ Question → embed → FAISS MMR search → top-5 chunks
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/XiaodanChenSheldan/MyThesisChatDemo.git
+git clone https://github.com/XiaodanChenSheldan/MyPaperChatDemo.git
 cd demo
 
 # 2. Create conda environment
